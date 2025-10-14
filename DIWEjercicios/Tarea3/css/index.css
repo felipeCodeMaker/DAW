@@ -1,0 +1,62 @@
+table {
+        border-collapse: collapse;
+    }
+th,td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+#email{
+    width: 180px;
+}
+#submit{
+    width: 70px;
+}
+
+#hora{
+    background-color: green;
+}
+#recreo{
+    background-color: yellow;
+}
+/*
+#capacidad td{
+    background-color: gray;
+}
+*/
+#tabla2 tr:first-of-type td{
+    background-color: gray;
+} 
+
+#tabla2 tbody tr th:first-of-type{
+    background-color: red;
+}
+ul{
+    color: red;
+}
+
+/*
+*la forma mass limpia de hacer el anterior
+*#capacidad th {
+*    background-color: transparent; /* o inherit, o el color original */
+/*}
+*****/
+
+#tiempoCarga :nth-child(3){
+    background-color: yellow;
+}
+
+
+
+/*
+[colspan = "2"]:not(#tabla1 [colspan = "2"]):not(#tiempoCarga :nth-child(3)
+Esto lo que hace es decir, de las que cumplan la condicion [colspan = "2"] evita las 
+que cumplan las condiciones 
+:not(#tabla1 [colspan = "2"]):not(#tiempoCarga :nth-child(3)
+*/
+
+[colspan = "2"]:not(#tabla1 [colspan = "2"]):not(#tiempoCarga :nth-child(3)),
+[colspan = "3"]{
+    background-color: blue;
+}
+

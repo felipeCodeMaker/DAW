@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Maquetación Web</title>
+   <link rel="stylesheet" href="css/maquetacion.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Guía Completa de Maquetación Web</h1>
+            <p>Esta página muestra ejemplos prácticos de los principales conceptos de maquetación web.</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#display">Display</a></li>
+                <li><a href="#layout">Layout</a></li>
+                <li><a href="#box-sizing">Box-Sizing</a></li>
+                <li><a href="#centrado">Centrado</a></li>
+                <li><a href="#position">Position</a></li>
+                <li><a href="#columnas">Columnas</a></li>
+                <li><a href="#flotantes">Flotantes</a></li>
+            </ul>
+        </nav>
+        
+        <section id="display">
+            <h2>Propiedad DISPLAY</h2>
+            
+            <h3>Display: inline</h3>
+            <div class="example inline-example">
+                <p>Los elementos <span>inline</span> fluyen con el texto y <span>no aceptan</span> dimensiones width/height.</p>
+            </div>
+            
+            <h3>Display: inline-block</h3>
+            <div class="example inline-block-example">
+                <div>Caja 1</div>
+                <div>Caja 2</div>
+                <div>Caja 3</div>
+            </div>
+            
+            <h3>Display: block</h3>
+            <div class="example block-example">
+                <div>Elemento bloque 1</div>
+                <div>Elemento bloque 2</div>
+                <div>Elemento bloque 3</div>
+            </div>
+        </section>
+        
+        <section id="layout">
+            <h2>Tipos de LAYOUT</h2>
+            
+            <h3>Layout Fixed (Fijo)</h3>
+            <div class="example">
+                <div class="fixed-layout">
+                    Este layout tiene un ancho fijo de 800px, independiente del tamaño de la ventana.
+                </div>
+            </div>
+            
+            <h3>Layout Elastic (Elástico)</h3>
+            <div class="example">
+                <div class="elastic-layout">
+                    Este layout usa unidades em (60em) para adaptarse al tamaño de fuente del usuario.
+                </div>
+            </div>
+            
+            <h3>Layout Fluid (Fluido)</h3>
+            <div class="example">
+                <div class="fluid-layout">
+                    Este layout usa porcentajes (80%) para adaptarse al ancho de la ventana.
+                </div>
+            </div>
+            
+            <h3>Layout Híbrido</h3>
+            <div class="example">
+                <div class="hybrid-layout">
+                    Este layout combina porcentaje (90%) con valores mínimos y máximos (min-width: 600px, max-width: 1000px).
+                </div>
+            </div>
+        </section>
+        
+        <section id="box-sizing">
+            <h2>BOX-SIZING: border-box</h2>
+            <div class="example border-box-example">
+                <div>
+                    Con box-sizing: border-box, el padding y border se incluyen dentro del width especificado (50% en este caso).
+                    Sin border-box, el ancho total sería 50% + padding + border.
+                </div>
+            </div>
+        </section>
+        
+        <section id="centrado">
+            <h2>Técnicas de CENTRADO</h2>
+            
+            <h3>Centrado Horizontal de Elementos Inline</h3>
+            <div class="example horizontal-inline">
+                <span>Elemento centrado con text-align: center</span>
+            </div>
+            
+            <h3>Centrado Horizontal de Elementos Bloque</h3>
+            <div class="example">
+                <div class="horizontal-bloque">
+                    Elemento bloque centrado con margin: 0 auto
+                </div>
+            </div>
+            
+            <h3>Centrado Vertical de Elementos Inline (una línea)</h3>
+            <div class="example vertical-inline">
+                Texto centrado verticalmente con line-height
+            </div>
+            
+            <h3>Centrado Vertical de Elementos Bloque</h3>
+            <div class="example vertical-bloque">
+                <div>Elemento centrado con position: absolute y transform: translateY(-50%)</div>
+            </div>
+        </section>
+        
+        <section id="position">
+            <h2>Propiedad POSITION</h2>
+            
+            <div class="example position-container">
+                <div class="box static">Static (por defecto)</div>
+                <div class="box relative">Relative (desplazado)</div>
+                <div class="box absolute">Absolute (relativo al contenedor)</div>
+            </div>
+            
+            <div class="box fixed">Fixed (posición fija en la ventana)</div>
+            
+            <div style="height: 800px; position: relative;">
+                <div class="box sticky">Sticky (se pega al hacer scroll)</div>
+                <p>Desplaza hacia abajo para ver el efecto sticky...</p>
+                <div style="height: 1500px;"></div>
+            </div>
+            
+            <h3>Z-Index</h3>
+            <div class="example z-index-example">
+                <div class="z-index-box z-index-1">Z-Index: 1</div>
+                <div class="z-index-box z-index-2">Z-Index: 2</div>
+                <div class="z-index-box z-index-3">Z-Index: 3</div>
+            </div>
+        </section>
+        
+        <section id="columnas">
+            <h2>COLUMNAS CSS</h2>
+            <div class="example column-example">
+                <p><strong>Todo el texto incluido en el contenedor afectado por la maquetación, en columnas.</strong> </p>
+                <p>Como el ciego me tenía gran avaricia de comida, yo, que era muchacho y de buen apetito, no me podía haber con él. </p>
+                <p> así, viendo que traía todo lo que había de comer en un costal atado con una argolla y candado, determiné de hurtarle. </p>
+                <p>Y como el fondo del costal estaba ya roto y cosido, yo, cuando me veía solo, descosía un poco cada vez, y sacaba lo que </p>
+                <p>quería, y luego lo volvía a coser. De esta manera me mantenía, y él no se daba cuenta. Mas, queriendo probar si el vino me </p>
+                <p>sabía bien, hice un pequeño agujero en el fondo del jarro, que estaba puesto sobre una hornacina, y lo tapé con cera. </p>
+                <p>Y cuando quería beber, quitaba la cera con el dedo, y ponía la boca al agujero, y el vino corría. Y así me regalaba muchas </p>
+                <p>veces. Pero un día, queriendo beber, el ciego sintió el jarro más liviano, y alzó la mano al agujero, y sintió el vino correr.</p>
+                <p>Entonces, llenó el jarro de vino y, esperándome, cuando vine, me dio con él en la cabeza de tal manera que me dejó maltrecho y </p>
+                <p>sin dientes delanteros.</p>
+
+
+            </div>
+        </section>
+        
+        <section id="flotantes">
+            <h2>Elementos FLOTANTES</h2>
+            
+            <h3>Float: left</h3>
+            <div class="example float-container clearfix">
+                <div class="float-left">Float: left</div>
+                <p>originalmente pensada para indicar como se dispone un texto alrededor de una imagen. Hoy se usa para maquetar, </p>
+                <p>flotando elementos y jugando con sus dimensiones. Sus valores son left o right.</p>
+            </div>
+            
+            <h3>Float: right</h3>
+            <div class="example float-container clearfix">
+                <div class="float-right">Float: right</div>
+                <p>originalmente pensada para indicar como se dispone un texto alrededor de una imagen. Hoy se usa para maquetar, </p>
+                <p>flotando elementos y jugando con sus dimensiones. Sus valores son left o right.</p>
+            </div>
+            
+            <h3>Clear: both</h3>
+            <div class="example">
+                <div class="float-left">Float: left</div>
+                <div class="float-right">Float: right</div>
+                <div class="clear-both">Clear: both - Este elemento limpia ambos flotantes</div>
+            </div>
+            
+            <h3>Clearfix Hack</h3>
+            <div class="example">
+                <p>El clearfix hack se aplica al contenedor para que contenga correctamente los elementos flotantes.</p>
+                <div class="float-container clearfix">
+                    <div class="float-left">Elemento flotante</div>
+                    <div class="float-right">Otro elemento flotante</div>
+                </div>
+                <p>Contenedor con clearfix aplicado correctamente.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

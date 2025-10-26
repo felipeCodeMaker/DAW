@@ -92,93 +92,77 @@ header{
 
 /*------ div id = catalogo  / tarea 3  ------*/
 
-#catalogo {
-    font-size: 24px;
-    font-weight: bold;
+
+/*------ div id = imagenes y texto / tarea4------*/
+
+.contenedor-img {
+    margin-top:0px;
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background-color: gray;
+    width: 100%;
     margin-bottom: 20px;
-    text-align: center;
+}
+
+.contenedor-img figure {
+    flex: 0 0 19%; /* Cada figura ocupa exactamente 10% del ancho */
+    margin: 0;
+    padding: 6px;
+    box-sizing: border-box;
+    
+    border: 1px solid #ddd; /* Recuadrado simple */
+    
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.contenedor-img figure:hover {
+    border-color: #999;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transform: scale(1.02);
+}
+
+.contenedor-img figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+}
+
+
+
+
+/*-------------------   portafolio / tarea 6    -------------------------*/
+
+
+
+.portafolio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
     padding: 20px;
-    background-color: black;
-    width: 100%;
-    color: white;
-   margin-bottom: 0px;
-    text-align: left;    
 }
 
-.contenedor-flex {
-    margin-top:0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-    padding: 10px;
-    background-color: gray;
-    width: 100%;
-    margin-bottom: 20px;
-}
 
-.contenedor-flex figure {
-    flex: 0 0 19%; /* Cada figura ocupa exactamente 10% del ancho */
-    margin: 0;
-    padding: 6px;
-    box-sizing: border-box;
-    
-    border: 1px solid #ddd; /* Recuadrado simple */
-    
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    transition: all 0.2s ease;
-}
+.portafolio figure { margin: 0; }
+.portafolio img { width: 100%; height: auto; border-radius: 8px; }
+.portafolio figcaption { padding: 15px; background-color: #f9f9f9; margin-top: -5px; }
 
-.contenedor-flex figure:hover {
-    border-color: #999;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transform: scale(1.02);
-}
-
-.contenedor-flex figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-    
-}
-
-/*------ div id = imgDescripcion / tarea4------*/
-
-.contenedor-flex {
-    margin-top:0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-    padding: 10px;
-    background-color: gray;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.contenedor-flex figure {
-    flex: 0 0 19%; /* Cada figura ocupa exactamente 10% del ancho */
-    margin: 0;
-    padding: 6px;
-    box-sizing: border-box;
-    
-    border: 1px solid #ddd; /* Recuadrado simple */
-    
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    transition: all 0.2s ease;
-}
-
-.contenedor-flex figure:hover {
-    border-color: #999;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transform: scale(1.02);
-}
-
-.contenedor-flex figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-    
-}
+/* Distribución en 4 columnas: 3-1-3-2 */
+.portafolio figure:nth-child(2) { grid-area: 2 / 1; }
+.portafolio figure:nth-child(3) { grid-area: 3 / 1; }
+.portafolio figure:nth-child(4) { grid-area: 4 / 1; }
+.portafolio figure:nth-child(5) { grid-area: 2 / 2 / span 3 / auto; }
+.portafolio figure:nth-child(6) { grid-area: 2 / 3; }
+.portafolio figure:nth-child(7) { grid-area: 3 / 3; }
+.portafolio figure:nth-child(8) { grid-area: 4 / 3; }
+.portafolio figure:nth-child(9) { grid-area: 2 / 4; }
+.portafolio figure:nth-child(10) { grid-area: 3 / 4; }

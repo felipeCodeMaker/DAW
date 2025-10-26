@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 800px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #008080;
+}
+
+/* Contenedor principal para cada fila - ¡ESTE FALTABA! */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    padding-right: 15px;
+}
+
+.form-control {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+    width: 100%; /* Para que ocupe todo el espacio disponible */
+}
+
+/* Estilos para los checkboxes - ¡ESTOS FALTABAN! */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkboxes {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+
+.checkbox-item label {
+    width: auto;
+    font-weight: normal;
+    padding-right: 0;
+}
+
+/* Eliminar estilos conflictivos que sobraban */
+/* 
+textarea {
+    width: 70%;  ← CONFLICTA con .form-control
+    padding: 10px; ← CONFLICTA con .form-control
+    border: 1px solid #ccc; ← CONFLICTA con .form-control
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+input[type="text"]{
+    width: 350px; ← CONFLICTA con .form-control
+    padding: 8px; ← CONFLICTA con .form-control
+    margin: 5px 0 15px 0; ← CONFLICTA con .form-group margin
+    border: 1px solid #ccc; ← CONFLICTA con .form-control
+    box-sizing: border-box;
+}
+
+.skills-grid, .skill-item { ← NO SE USAN
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.skill-item label {
+    font-weight: normal;
+}
+
+.skill-item input[type="range"] {
+    width: 100%;
+}
+*/

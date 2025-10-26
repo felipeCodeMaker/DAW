@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ejercicios con Formularios</title>
+    <link rel="stylesheet" href="./css/form.css">
+
+</head>
+
+<body>
+
+    <form>
+        <fieldset style="background-color: #008080">
+           
+            <div class="form-group">
+                <label for="nombre">LAST NAME</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Enter your first name here"/>
+            </div>
+            
+            <!-- LAST NAME -->
+            <div class="form-group">
+                <label for="apellidos">LAST NAME</label>
+                <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Enter your last name here"/>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email here"/>
+            </div>
+
+            <!-- PHONE -->
+            <div class="form-group">
+                <label for="telefono">PHONE</label>
+                <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Enter your phone here"/>
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="form-group">
+                <label for="mensaje">MESSAGE</label>
+                <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Enter your message here"></textarea>
+            </div>
+
+
+            <div class="form-group checkbox-group">
+                <label>AGE</label>
+                <div class="checkboxes">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="age20" name="age" value="20-29">
+                        <label for="age20">20-29</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="age30" name="age" value="30-39">
+                        <label for="age30">30-39</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="age40" name="age" value="40-49">
+                        <label for="age40">40-49</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="age50" name="age" value="50-59">
+                        <label for="age50">50-59</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="age60" name="age" value="60">
+                        <label for="age60">>60</label>
+                    </div>
+                </div>
+            </div>
+
+
+    </form>
+
+</body>
+
+</html>

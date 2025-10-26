@@ -1,0 +1,18 @@
+.contenedor {
+    display: flex;           /* Cambiar grid por flex */
+    flex-direction: column;  /* Organizar verticalmente */
+    gap: 2px;               /* Espacio entre líneas */
+    
+}
+
+.item{
+    background-color: gray;
+    color: white;
+}
+
+.linea {
+    display: grid;
+    grid-template-columns: repeat(var(--cantidad-items), 1fr);
+    gap: 2px;
+    /* Eliminar flex-wrap y margin-bottom */
+}

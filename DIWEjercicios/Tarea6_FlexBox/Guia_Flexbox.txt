@@ -1,0 +1,103 @@
+Guía Completa de Propiedades Flexbox
+PROPIEDADES PARA EL CONTENEDOR PADRE (flex-container)
+display: flex; → Define un contenedor flex y habilita el contexto flex para todos sus hijos directos.
+
+flex-direction: row; → Establece la dirección del eje principal en horizontal (izquierda a derecha).
+
+flex-direction: row-reverse; → Establece la dirección del eje principal en horizontal invertido (derecha a izquierda).
+
+flex-direction: column; → Establece la dirección del eje principal en vertical (arriba a abajo).
+
+flex-direction: column-reverse; → Establece la dirección del eje principal en vertical invertido (abajo a arriba).
+
+flex-wrap: nowrap; → Los elementos flexibles no se envuelven (permanecen en una sola línea).
+
+flex-wrap: wrap; → Los elementos flexibles se envuelven en múltiples líneas (de arriba a abajo).
+
+flex-wrap: wrap-reverse; → Los elementos flexibles se envuelven en múltiples líneas (de abajo a arriba).
+
+flex-flow: row nowrap; → Propiedad abreviada para flex-direction y flex-wrap.
+
+justify-content: flex-start; → Alinea los elementos al inicio del eje principal.
+
+justify-content: flex-end; → Alinea los elementos al final del eje principal.
+
+justify-content: center; → Alinea los elementos al centro del eje principal.
+
+justify-content: space-between; → Distribuye los elementos uniformemente, el primero al inicio y el último al final.
+
+justify-content: space-around; → Distribuye los elementos uniformemente con espacio igual alrededor de ellos.
+
+justify-content: space-evenly; → Distribuye los elementos uniformemente con espacio igual entre ellos.
+
+align-items: stretch; → Estira los elementos para llenar el contenedor (valor por defecto).
+
+align-items: flex-start; → Alinea los elementos al inicio del eje transversal.
+
+align-items: flex-end; → Alinea los elementos al final del eje transversal.
+
+align-items: center; → Alinea los elementos al centro del eje transversal.
+
+align-items: baseline; → Alinea los elementos según su línea base.
+
+align-content: stretch; → Las líneas se estiran para ocupar el espacio restante (valor por defecto).
+
+align-content: flex-start; → Las líneas se empaquetan hacia el inicio del contenedor.
+
+align-content: flex-end; → Las líneas se empaquetan hacia el final del contenedor.
+
+align-content: center; → Las líneas se empaquetan hacia el centro del contenedor.
+
+align-content: space-between; → Las líneas se distribuyen uniformemente, la primera al inicio y la última al final.
+
+align-content: space-around; → Las líneas se distribuyen uniformemente con espacio igual alrededor.
+
+align-content: space-evenly; → Las líneas se distribuyen uniformemente con espacio igual entre ellas.
+
+gap: 10px; → Define el espacio entre elementos flexibles (row-gap y column-gap).
+
+row-gap: 10px; → Define el espacio entre filas de elementos flexibles.
+
+column-gap: 10px; → Define el espacio entre columnas de elementos flexibles.
+
+PROPIEDADES PARA LOS ELEMENTOS HIJOS (flex-items)
+order: 0; → Controla el orden en que aparecen los elementos (valor por defecto 0).
+
+flex-grow: 0; → Define la capacidad de un elemento flexible para crecer si es necesario (valor por defecto 0).
+
+flex-shrink: 1; → Define la capacidad de un elemento flexible para encogerse si es necesario (valor por defecto 1).
+
+flex-basis: auto; → Define el tamaño inicial de un elemento flexible antes de que se distribuya el espacio restante.
+
+flex: 0 1 auto; → Propiedad abreviada para flex-grow, flex-shrink y flex-basis (valor por defecto).
+
+align-self: auto; → Permite la alineación predeterminada (o la heredada de align-items).
+
+align-self: flex-start; → Alinea el elemento individual al inicio del eje transversal.
+
+align-self: flex-end; → Alinea el elemento individual al final del eje transversal.
+
+align-self: center; → Alinea el elemento individual al centro del eje transversal.
+
+align-self: baseline; → Alinea el elemento individual según su línea base.
+
+align-self: stretch; → Estira el elemento individual para llenar el contenedor.
+
+
+Ejemplo:
+
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.elemento {
+    flex: 1 0 200px;
+    order: 1;
+    align-self: flex-start;
+}

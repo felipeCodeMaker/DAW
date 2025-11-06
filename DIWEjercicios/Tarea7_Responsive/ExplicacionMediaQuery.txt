@@ -1,0 +1,78 @@
+📱 Qué son los Media Queries
+Son reglas de CSS que permiten adaptar el diseño a diferentes dispositivos y tamaños de pantalla.
+
+🔍 Análisis del código:
+Primer Media Query - Tablets y móviles grandes
+css
+@media (max-width: 768px) {
+Se activa cuando: La pantalla tiene 768px de ancho o menos (tablets y móviles)
+
+Cambios que aplica:
+
+.navbar → Reduce padding y altura de la barra de navegación
+
+.logo → Reduce tamaño de fuente del logo
+
+.hero h1 → Reduce tamaño del título principal
+
+.hero p → Reduce tamaño del texto descriptivo
+
+.category-buttons → Reduce espacio entre botones
+
+.category-btn → Hace botones más pequeños
+
+.container → Reduce padding general
+
+.cards-container → Cambia a 1 columna (en lugar de varias)
+
+.sidebar → Hace la barra lateral más estrecha
+
+Segundo Media Query - Móviles pequeños
+css
+@media (max-width: 480px) {
+Se activa cuando: La pantalla tiene 480px de ancho o menos (móviles pequeños)
+
+Cambios adicionales:
+
+.navbar → Reduce aún más el padding y altura
+
+.logo → Logo más pequeño
+
+.hero h1 → Título principal más pequeño
+
+.category-buttons → Cambia a columna vertical
+
+.category-btn → Botones ocupan todo el ancho
+
+.sidebar → Barra lateral aún más estrecha
+
+🎯 Ejemplo visual de cómo funciona:
+html
+<!-- En pantallas grandes (>768px) -->
+[ NAVEGACIÓN GRANDE ] [ TÍTULO GRANDE ]
+[ BOTÓN ] [ BOTÓN ] [ BOTÓN ]  ← En fila
+[ CARD ] [ CARD ] [ CARD ]     ← 3 columnas
+
+<!-- En tablets (≤768px) -->
+[ NAV MEDIANA ] [ TÍTULO MEDIANO ]
+[BTN] [BTN] [BTN]              ← Más juntos
+[ CARD ]                        ← 1 columna
+[ CARD ]
+[ CARD ]
+
+<!-- En móviles (≤480px) -->
+[ NAV PEQUEÑA ] [ TÍTULO PEQUEÑO ]
+[ BOTÓN ANCHO ]                 ← En columna
+[ BOTÓN ANCHO ]
+[ BOTÓN ANCHO ]
+[ CARD ]
+[ CARD ]
+[ CARD ]
+💡 Por qué es importante:
+Mejora la experiencia de usuario en móviles
+
+Texto legible sin necesidad de hacer zoom
+
+Botones fáciles de tocar con los dedos
+
+Contenido bien organizado en espacio limitado

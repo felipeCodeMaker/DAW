@@ -1,0 +1,41 @@
+*{
+    box-sizing:border-box;
+}
+
+.container{
+    display: grid;
+}
+
+ @media (max-width: 768px) {
+    .navbar {
+        padding: 1.2rem;
+        height: 70px;
+    }
+
+}
+
+.barra{
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-text);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 100;
+}
+
+.icono {
+    width: 50px;        /* Ancho */
+    height: 50px;       /* Alto */
+    object-fit: contain; /* Mantiene proporciones */
+    margin-right: 10px;  /* Espacio a la derecha */
+}
+
+.barra {
+    display: flex;
+    align-items: center;  /* Centra verticalmente */
+    gap: 10px;           /* Espacio entre elementos */
+}
+

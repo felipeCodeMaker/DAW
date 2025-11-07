@@ -1,22 +1,19 @@
 const formulario = document.querySelector('#formulario');
+
 /*
 formulario.addEventListener('submit', (e) => {
-
-    e.preventDefault();     //Evitamos la accion por defecto que es post
-
-    console.log(e.target.method);   //Mostramos el metodo por defecto
-    console.log(e.target.action);   //Mostramos la accion por defecto
-
+    e.preventDefault();     // Evita el envío tradicional del formulario
+    console.log(e.target.method);   // Método del formulario (GET/POST)
+    console.log(e.target.action);   // URL de destino del formulario
 });
 */
 
-
+// Alternativa: usar función nombrada en lugar de arrow function
 formulario.addEventListener('submit', validarFormulario);
 
 function validarFormulario(e){
-    e.preventDefault();
-    console.log(e.target.action);
+    e.preventDefault();     // Previene el comportamiento por defecto
+    console.log(e.target.action); // Muestra la acción del formulario
 }
 
-
-//SON LO MISMO ESCRITO DE DIFERENTE MANERA
+// Comentario: Ambas formas son equivalentes, solo cambia la sintaxis

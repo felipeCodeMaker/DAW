@@ -46,10 +46,12 @@ busqueda.addEventListener('input', () => {
 //A la funcion anónima le pasamos como parametro el evento que esta sucediendo
 
 busqueda.addEventListener('input', (e) => {
-    console.log(e);
-    console.log(e.type);    //tipo de elemento que estoy escribiendo
-    console.log(e.target);      //objetivo de eveento
-    console.log(e.target.value);    //valor del objetivo
+    console.log(e);         // Objeto evento completo
+    console.log(e.type);    //tipo de elemento que estoy escribiendo     // Tipo de evento ('input')
+    console.log(e.target);      //objetivo de eveento   // Elemento que disparó el evento
+    console.log(e.target.value);    // Valor actual del campo
+
+    // Validación: si el campo está vacío
 
     if(e.target.value === ''){
         console.log('Fallo la validación, no paso nada.');

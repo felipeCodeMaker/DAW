@@ -11,6 +11,6 @@ while(i<10){
 
 let j =0;
 do{
-    console.log(`Numero ${i}`);
+    console.log(`Numero ${j}`);
     j++
 }while(j<10);

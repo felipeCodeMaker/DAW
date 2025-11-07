@@ -17,7 +17,38 @@
          <!-- ./ significa que es el archivo indicado se encuentra en la misma
                     carpeta que el archivo desd el que se hace la llamada-->
         <!-- <script src="js/02-app.js" type= "text/javascript"></script>  -->
-        <script src="js/01-app.js" type= "text/javascript"></script> 
+ 
+
+        <button id="colorBtn">Haz click para cambiar color</button>
+
+        <button id="clickBtn">Haz click</button>
+        <p>Clicks: <span id="contador">0</span></p>
+
+        <button id="toggleBtn">Ocultar contenido</button>
+        <div id="contenido" style="padding: 20px; background-color: #f0f0f0;">
+            Este es el contenido que se puede ocultar y mostrar.
+        </div>
+
+        <input type="text" id="itemInput" placeholder="Escribe un elemento">
+        <button id="addBtn">Añadir a la lista</button>
+        <ul id="lista"></ul>
+
+
+
+        <div style="position: fixed; top: 10px; left: 10px; background: white; padding: 10px;">
+            Posición del ratón: 
+            <span id="posX">0</span>, 
+            <span id="posY">0</span>
+        </div>
+
+
+
+        <script src="js/extra-app.js" type= "text/javascript">
+
+
+
+
+        </script>        
 
     </body>
 

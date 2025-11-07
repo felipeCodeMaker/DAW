@@ -1,27 +1,24 @@
-const encabezado = document.querySelector('h1');
+const encabezado = document.querySelector('h1'); // Selecciona el primer elemento h1
 
-console.log(encabezado.style);
+console.log(encabezado.style); // Muestra en consola el objeto style del h1
 
-//Las mismas propiedades que tenemos en HTML stylos tambien las tienes en JavaScript 
-// las que son compuestas les quita el guion
+// Las mismas propiedades que tenemos en HTML estilos también las tienes en JavaScript
+// Las que son compuestas les quita el guion
 
-//Tambien lo podemos hacer agregando o quitando clases
-//que tenemos definidas en nuestro css
-encabezado.style.backgroundColor = 'green';
-encabezado.style.fontFamily = 'Arial';
-encabezado.style.ttextTransform = 'uppercase';
+// También lo podemos hacer agregando o quitando clases
+// que tenemos definidas en nuestro CSS
+encabezado.style.backgroundColor = 'green'; // Cambia el color de fondo a verde
+encabezado.style.fontFamily = 'Arial'; // Cambia la fuente a Arial
+encabezado.style.textTransform = 'uppercase'; // Transforma el texto a mayúsculas
 
-//devuelve la primera etiqueta que tiene la clase card
-const card = document.querySelector('.card');
+// Devuelve la primera etiqueta que tiene la clase card
+const card = document.querySelector('.card'); // Selecciona el primer elemento con clase 'card'
 
-//Añade una nueva clase a la etiqueta seleccionada
-//Puedes añadir mas de una clase
-card.classList.add('nueva-clase')
+// Añade una nueva clase a la etiqueta seleccionada
+// Puedes añadir más de una clase
+card.classList.add('nueva-clase') // Añade la clase 'nueva-clase' al elemento
 
-//card.classList.add('nueva-clase', 'segunda-clase')
+// card.classList.add('nueva-clase', 'segunda-clase') // Ejemplo: añadir múltiples clases
 
-//Podemos eliminar una clase
-card.classList.remove('card');
-
-
-
+// Podemos eliminar una clase
+card.classList.remove('card'); // Elimina la clase 'card' del elemento

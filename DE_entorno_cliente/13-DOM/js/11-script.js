@@ -1,28 +1,25 @@
-const btnFlotante = document.querySelector('.btn-flotante');
-const footer = document.querySelector('.footer');
+const btnFlotante = document.querySelector('.btn-flotante'); // Selecciona botón flotante
+const footer = document.querySelector('.footer'); // Selecciona footer
 
-//btnFlotante.addEventListener('click', () =>{
-//console.log('Hiciste click');
-//});
+// btnFlotante.addEventListener('click', () =>{ // Versión con arrow function (comentada)
+// console.log('Hiciste click');
+// });
 
-btnFlotante.addEventListener('click', mostrarOcultarFooter);
+btnFlotante.addEventListener('click', mostrarOcultarFooter); // Asigna evento click a la función
 
-function mostrarOcultarFooter(){
+function mostrarOcultarFooter(){ // Define función para mostrar/ocultar footer
 
-    if(footer.classList.contains('activo')){
-        footer.classList.remove('activo');
-        btnFlotante.classList.remove('activo');
-        //this.classList.remove('activo')
-        this.textContext = 'Idioma y Moneda';
+    if(footer.classList.contains('activo')){ // Si footer tiene clase 'activo'
+        footer.classList.remove('activo'); // Quita clase 'activo' del footer
+        btnFlotante.classList.remove('activo'); // Quita clase 'activo' del botón
+        // this.classList.remove('activo') // Alternativa usando this (comentada)
+        this.textContent = 'Idioma y Moneda'; // Cambia texto del botón
 
-    }else{
-        footer.classList.add('activo');
-        btnFlotante.classList.add('activo');
-        //this.classList.remove('activo')
-        this.textContent = 'X CERRAR';
+    }else{ // Si footer NO tiene clase 'activo'
+        footer.classList.add('activo'); // Añade clase 'activo' al footer
+        btnFlotante.classList.add('activo'); // Añade clase 'activo' al botón
+        // this.classList.remove('activo') // Alternativa usando this (comentada)
+        this.textContent = 'X CERRAR'; // Cambia texto del botón
     }
-    //Hazlo con un operador ternario
-
+    // Hazlo con un operador ternario (sugerencia)
 }
-
-

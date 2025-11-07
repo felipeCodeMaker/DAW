@@ -1,9 +1,8 @@
-//seleccionar por id
+// Seleccionar elementos por ID
 
-const formulario = document.getElementById("formulario");
+const formulario = document.getElementById("formulario"); // Obtiene el elemento con ID 'formulario'
 
+const noExiste = document.getElementById("noexiste"); // Intenta obtener elemento con ID 'noexiste' (no existe)
 
-const noExiste = document.getElementById("noexiste");
-
-//si por algun motivo tenemos dos identificadores con el mismo nombre, va a seleccionar el primero que encuentre
-//al segundo lo ignorara
+// Si por algún motivo tenemos dos identificadores con el mismo nombre, va a seleccionar el primero que encuentre
+// Al segundo lo ignorará

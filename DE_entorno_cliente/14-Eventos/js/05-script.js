@@ -1,17 +1,17 @@
 window.addEventListener('scroll', () => {
-    const scrollPX = window.scrollY;
-
+    const scrollPX = window.scrollY; // Píxeles desplazados verticalmente
     console.log(scrollPX);
 
     const premium = document.querySelector('.premium');
-    const ubicacion = premium.getBoundingClientRect(); //Entre otra informacion devuelve las coordenadas de la ubicacion
-    //del elemento
+    // Obtiene las coordenadas y dimensiones del elemento
+    const ubicacion = premium.getBoundingClientRect();
     console.log(ubicacion);
-        if(ubicacion.top< 675){
-             console.log('El elemento ya esta visible');    //Podemos añadir una clase
-
-        }else{
-            console.log('No lo esta')
-        }
-
+    
+    // Verifica si el elemento está visible en la ventana
+    if(ubicacion.top < 675){
+        console.log('El elemento ya esta visible');
+        // Podemos añadir una clase aquí para estilos
+    } else {
+        console.log('No lo esta')
+    }
 });

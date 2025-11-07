@@ -17,7 +17,7 @@ let resul1 = [meses, ...meses2];
 console.log(resul1);
 
 let resul2 = [meses, ...meses2, ...meses3];
-console.log(resul1);
+console.log(resul2);
 
 resul1 = [...meses, ...meses2, ...meses3, "Cardulio"];
 console.log(resul1);

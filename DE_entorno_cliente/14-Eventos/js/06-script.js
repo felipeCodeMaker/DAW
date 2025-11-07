@@ -1,21 +1,19 @@
-//Event bubbling, propagacion de eventos
-
+// Event bubbling: propagación de eventos desde el elemento hijo al padre
 const cardDiv = document.querySelector('.card');//captura la primera card
 const infoDiv = document.querySelector('.info');//captura el primer info
 const titulo = document.querySelector('.titulo');//captura el primer titulo
 
 cardDiv.addEventListener('click', (e) => {
-    //e.stopPropagation();
+    // e.stopPropagation(); // Comentado: permite la propagación
     console.log('Click en card');
 });
 
 infoDiv.addEventListener('click', (e) => {
-    //e.stopPropagation();
+    // e.stopPropagation(); // Comentado: permite la propagación
     console.log('Click en info');
 });
 
-
 titulo.addEventListener('click', (e) => {
-    //e.stopPropagation();
+    // e.stopPropagation(); // Comentado: permite la propagación
     console.log('Click en titulo');
 });

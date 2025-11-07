@@ -1,4 +1,5 @@
 // Evitar la propagación con contenido creado...
+// Creación dinámica de elementos y asignación de eventos
 const parrafo1 = document.createElement('P');
 parrafo1.textContent = 'Concierto';
 parrafo1.classList.add('categoria');
@@ -14,10 +15,11 @@ const parrafo3 = document.createElement('p');
 parrafo3.textContent = '$800 por persona';
 parrafo3.classList.add('precio');
 
+// Tres formas equivalentes de asignar eventos
+parrafo3.onclick = ()=>{nuevaFuncion(2)}; //Cualquiera de los 3 // Arrow function con parámetro
+// parrafo3.onclick = function(){nuevaFuncion()};   // Función anónima tradicional
+// parrafo3.onclick = nuevaFuncion;     // Referencia directa a función
 
-parrafo3.onclick = ()=>{nuevaFuncion(2)}; //Cualquiera de los 3
-// parrafo3.onclick = function(){nuevaFuncion()};
-// parrafo3.onclick = nuevaFuncion;
 
 
 // crear el div...
@@ -48,3 +50,6 @@ contenedor.appendChild(contenedorCard); // al inicio info
 function nuevaFuncion(id){
     console.log('Click en nuevo parrafo', id)
 }
+
+
+

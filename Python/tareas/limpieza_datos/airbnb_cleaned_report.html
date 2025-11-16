@@ -1,0 +1,609 @@
+
+<html>
+<head>
+    <title>Airbnb Data Cleaned</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .summary { background-color: #f0f0f0; padding: 15px; border-radius: 5px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Dataset Airbnb - Resumen de Limpieza</h1>
+    
+    <div class="summary">
+        <h2>Resumen General</h2>
+        <p><strong>Filas:</strong> 102058</p>
+        <p><strong>Columnas:</strong> 26</p>
+        <p><strong>Fecha de procesamiento:</strong> 2025-11-16 19:15:24</p>
+    </div>
+    
+    <h2>Primeras 10 filas del dataset</h2>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>NAME</th>
+      <th>host id</th>
+      <th>host_identity_verified</th>
+      <th>host name</th>
+      <th>neighbourhood group</th>
+      <th>neighbourhood</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>country</th>
+      <th>country code</th>
+      <th>instant_bookable</th>
+      <th>cancellation_policy</th>
+      <th>room type</th>
+      <th>Construction year</th>
+      <th>price</th>
+      <th>service fee</th>
+      <th>minimum nights</th>
+      <th>number of reviews</th>
+      <th>last review</th>
+      <th>reviews per month</th>
+      <th>review rate number</th>
+      <th>calculated host listings count</th>
+      <th>availability 365</th>
+      <th>house_rules</th>
+      <th>license</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1001254</td>
+      <td>clean &amp; quiet apt home by the park</td>
+      <td>80014485718</td>
+      <td>unconfirmed</td>
+      <td>Madaline</td>
+      <td>Brooklyn</td>
+      <td>kensington</td>
+      <td>40.64749</td>
+      <td>-73.97237</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>False</td>
+      <td>strict</td>
+      <td>Private room</td>
+      <td>2020.0</td>
+      <td>966.0</td>
+      <td>$193</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>10/19/2021</td>
+      <td>0.21</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>286.0</td>
+      <td>Clean up and treat the home the way you'd like your home to be treated.  No smoking.</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1002102</td>
+      <td>skylit midtown castle</td>
+      <td>52335172823</td>
+      <td>verified</td>
+      <td>Jenna</td>
+      <td>Manhattan</td>
+      <td>midtown</td>
+      <td>40.75362</td>
+      <td>-73.98377</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>False</td>
+      <td>moderate</td>
+      <td>Entire home/apt</td>
+      <td>2007.0</td>
+      <td>142.0</td>
+      <td>$28</td>
+      <td>30.0</td>
+      <td>45.0</td>
+      <td>5/21/2022</td>
+      <td>0.38</td>
+      <td>4.0</td>
+      <td>2.0</td>
+      <td>228.0</td>
+      <td>Pet friendly but please confirm with me if the pet you are planning on bringing with you is OK. I have a cute and quiet mixed chihuahua. I could accept more guests (for an extra fee) but this also needs to be confirmed beforehand. Also friends traveling together could sleep in separate beds for an extra fee (the second bed is either a sofa bed or inflatable bed). Smoking is only allowed on the porch.</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1002403</td>
+      <td>the village of harlem....new york !</td>
+      <td>78829239556</td>
+      <td>Unknown</td>
+      <td>Elise</td>
+      <td>Manhattan</td>
+      <td>harlem</td>
+      <td>40.80902</td>
+      <td>-73.94190</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>True</td>
+      <td>flexible</td>
+      <td>Private room</td>
+      <td>2005.0</td>
+      <td>620.0</td>
+      <td>$124</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>Unknown</td>
+      <td>0.00</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>352.0</td>
+      <td>I encourage you to use my kitchen, cooking and laundry facilities. There is no additional charge to use the washer/dryer in the basement.  No smoking, inside or outside. Come home as late as you want.  If you come home stumbling drunk, it's OK the first time. If you do it again, and you wake up me or the neighbors downstairs, we will be annoyed.  (Just so you know . . . )</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1002755</td>
+      <td>unknown</td>
+      <td>85098326012</td>
+      <td>unconfirmed</td>
+      <td>Garry</td>
+      <td>Brooklyn</td>
+      <td>clinton hill</td>
+      <td>40.68514</td>
+      <td>-73.95976</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>True</td>
+      <td>moderate</td>
+      <td>Entire home/apt</td>
+      <td>2005.0</td>
+      <td>368.0</td>
+      <td>$74</td>
+      <td>30.0</td>
+      <td>270.0</td>
+      <td>7/5/2019</td>
+      <td>4.64</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>322.0</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1003689</td>
+      <td>entire apt: spacious studio/loft by central park</td>
+      <td>92037596077</td>
+      <td>verified</td>
+      <td>Lyndon</td>
+      <td>Manhattan</td>
+      <td>east harlem</td>
+      <td>40.79851</td>
+      <td>-73.94399</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>False</td>
+      <td>moderate</td>
+      <td>Entire home/apt</td>
+      <td>2009.0</td>
+      <td>204.0</td>
+      <td>$41</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>11/19/2018</td>
+      <td>0.10</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>289.0</td>
+      <td>Please no smoking in the house, porch or on the property (you can go to the nearby corner).  Reasonable quiet after 10:30 pm.  Please remove shoes in the house.</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1004098</td>
+      <td>large cozy 1 br apartment in midtown east</td>
+      <td>45498551794</td>
+      <td>verified</td>
+      <td>Michelle</td>
+      <td>Manhattan</td>
+      <td>murray hill</td>
+      <td>40.74767</td>
+      <td>-73.97500</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>True</td>
+      <td>flexible</td>
+      <td>Entire home/apt</td>
+      <td>2013.0</td>
+      <td>577.0</td>
+      <td>$115</td>
+      <td>3.0</td>
+      <td>74.0</td>
+      <td>6/22/2019</td>
+      <td>0.59</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>374.0</td>
+      <td>No smoking, please, and no drugs.</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1004650</td>
+      <td>blissartsspace!</td>
+      <td>61300605564</td>
+      <td>Unknown</td>
+      <td>Alberta</td>
+      <td>Brooklyn</td>
+      <td>bedford-stuyvesant</td>
+      <td>40.68688</td>
+      <td>-73.95596</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>False</td>
+      <td>moderate</td>
+      <td>Private room</td>
+      <td>2015.0</td>
+      <td>71.0</td>
+      <td>$14</td>
+      <td>45.0</td>
+      <td>49.0</td>
+      <td>10/5/2017</td>
+      <td>0.40</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>224.0</td>
+      <td>Please no shoes in the house so bring slippers or extra socks to keep your feet warm- especially in winter! No smoking either inside or outside. Please be considerate of neighbors from 10pm-7am in terms of noise. Please take out any trash and leave in the large blue garbage bin at the end of the driveway when you leave.</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1005202</td>
+      <td>blissartsspace!</td>
+      <td>90821839709</td>
+      <td>unconfirmed</td>
+      <td>Emma</td>
+      <td>Brooklyn</td>
+      <td>bedford-stuyvesant</td>
+      <td>40.68688</td>
+      <td>-73.95596</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>False</td>
+      <td>moderate</td>
+      <td>Private room</td>
+      <td>2009.0</td>
+      <td>1060.0</td>
+      <td>$212</td>
+      <td>45.0</td>
+      <td>49.0</td>
+      <td>10/5/2017</td>
+      <td>0.40</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>219.0</td>
+      <td>House Guidelines for our BnB We are delighted to welcome you.  Check in Sun – Thurs by 8PM and Fri, Sat by 9pm. Please bear in mind that this is not a hotel but our home and we are opening it to you.  We will do our utmost to make your stay enjoyable and fun.  We ask that you take care to respect our home and its appearance.  Thank you.  Marilyn and Alan 1.ROOMS - The bedroom is yours for the duration of your stay.  Be sure to let us know if you need something.  Please keep it neat and tidy and take advantage of the closet and bureau for your belongings.  We do ask that you turn off lights, air conditioner, fan, etc. when you are not in the room. Thank you. 2.LIGHTS – Please, too, remember to turn off lights on the stairway when returning.   3.KEYS - 2 house keys are provided - Replacement cost is $15 each 4.PARKING – Parking is available on street at all times.   5.SHOES – When the weather is inclement please remove shoes.   6.TOILETRIES - If you need them we can provide basic toiletr</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1005754</td>
+      <td>large furnished room near b'way</td>
+      <td>79384379533</td>
+      <td>verified</td>
+      <td>Evelyn</td>
+      <td>Manhattan</td>
+      <td>hell's kitchen</td>
+      <td>40.76489</td>
+      <td>-73.98493</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>True</td>
+      <td>strict</td>
+      <td>Private room</td>
+      <td>2005.0</td>
+      <td>1018.0</td>
+      <td>$204</td>
+      <td>2.0</td>
+      <td>430.0</td>
+      <td>6/24/2019</td>
+      <td>3.47</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>180.0</td>
+      <td>- Please clean up after yourself when using the kitchen. - When using the bathroom, please be careful to minimize the amount of water on the floor when showering and using the sink. - Please make sure to remove any strands of hair from the sink and floors with a tissue or paper towel. - Be respectful of the noise levels after 11pm.  - Please be quiet coming in late or leaving early. - No Smoking  - No Pets - No overnight guests - For safety reasons, please make sure to shut and lock the windows and front door when you leave. *** Note: cancellations are subject to fees that are non refundable ***</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1006307</td>
+      <td>cozy clean guest room - family apt</td>
+      <td>75527839483</td>
+      <td>unconfirmed</td>
+      <td>Carl</td>
+      <td>Manhattan</td>
+      <td>upper west side</td>
+      <td>40.80178</td>
+      <td>-73.96723</td>
+      <td>United States</td>
+      <td>US</td>
+      <td>False</td>
+      <td>strict</td>
+      <td>Private room</td>
+      <td>2015.0</td>
+      <td>291.0</td>
+      <td>$58</td>
+      <td>2.0</td>
+      <td>118.0</td>
+      <td>7/21/2017</td>
+      <td>0.99</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>375.0</td>
+      <td>NO SMOKING OR PETS ANYWHERE ON THE PROPERTY 1. Be respectful of the other tenants 2. If you use the grill, be sure to turn off the gas 3. Notify the owner of any discrepancies or things not functioning properly immediately 4. Please treat carpet stains promptly (or notify the owner) 5. Kindly turn off lights, air conditioners, and other electrical items when they aren't needed</td>
+      <td>Unknown</td>
+    </tr>
+  </tbody>
+</table>
+    
+    <h2>Tipos de Datos</h2>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tipo de Dato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>id</th>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <th>NAME</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>host id</th>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <th>host_identity_verified</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>host name</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>neighbourhood group</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>neighbourhood</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>lat</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>long</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>country</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>country code</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>instant_bookable</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>cancellation_policy</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>room type</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>Construction year</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>price</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>service fee</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>minimum nights</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>number of reviews</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>last review</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>reviews per month</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>review rate number</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>calculated host listings count</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>availability 365</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>house_rules</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>license</th>
+      <td>object</td>
+    </tr>
+  </tbody>
+</table>
+    
+    <h2>Estadísticas Descriptivas</h2>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>host id</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>Construction year</th>
+      <th>price</th>
+      <th>minimum nights</th>
+      <th>number of reviews</th>
+      <th>reviews per month</th>
+      <th>review rate number</th>
+      <th>calculated host listings count</th>
+      <th>availability 365</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.020580e+05</td>
+      <td>1.020580e+05</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+      <td>102058.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2.918438e+07</td>
+      <td>4.926738e+10</td>
+      <td>40.724905</td>
+      <td>-73.943856</td>
+      <td>2008.268210</td>
+      <td>623.842100</td>
+      <td>8.094789</td>
+      <td>27.468606</td>
+      <td>1.162233</td>
+      <td>3.268485</td>
+      <td>7.912128</td>
+      <td>140.424856</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.627173e+07</td>
+      <td>2.853742e+10</td>
+      <td>0.364879</td>
+      <td>0.656569</td>
+      <td>92.238321</td>
+      <td>332.693085</td>
+      <td>30.560858</td>
+      <td>49.540962</td>
+      <td>1.682184</td>
+      <td>1.296067</td>
+      <td>32.218935</td>
+      <td>135.452897</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.001254e+06</td>
+      <td>1.236005e+08</td>
+      <td>0.000000</td>
+      <td>-74.249840</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>-1223.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>-10.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.509286e+07</td>
+      <td>2.459924e+10</td>
+      <td>40.688720</td>
+      <td>-73.982580</td>
+      <td>2007.000000</td>
+      <td>338.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.090000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2.918438e+07</td>
+      <td>4.912865e+10</td>
+      <td>40.722285</td>
+      <td>-73.954440</td>
+      <td>2012.000000</td>
+      <td>623.000000</td>
+      <td>3.000000</td>
+      <td>7.000000</td>
+      <td>0.480000</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>95.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.327590e+07</td>
+      <td>7.400619e+10</td>
+      <td>40.762760</td>
+      <td>-73.932343</td>
+      <td>2017.000000</td>
+      <td>912.000000</td>
+      <td>5.000000</td>
+      <td>30.000000</td>
+      <td>1.710000</td>
+      <td>4.000000</td>
+      <td>2.000000</td>
+      <td>268.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>5.736742e+07</td>
+      <td>9.876313e+10</td>
+      <td>40.916970</td>
+      <td>0.000000</td>
+      <td>2022.000000</td>
+      <td>1200.000000</td>
+      <td>5645.000000</td>
+      <td>1024.000000</td>
+      <td>90.000000</td>
+      <td>5.000000</td>
+      <td>332.000000</td>
+      <td>3677.000000</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

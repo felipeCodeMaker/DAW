@@ -1,153 +1,183 @@
-// Paletas de colores básica
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
 
-//Colores generales
 $color-background: #FFFFFF;
 $color-base: #333333;
+$main-container-width: 90%;
 
+$card-themes: (
+    "verde": (color: #94c347, lightness: 30%),
+    "azul": (color: #007bff, lightness: 40%),
+    "naranja": (color: #ffc107, lightness: 25%),
+    "morada": (color: #9933cc, lightness: 45%)
+);
 
-//Colores barra de menú
-$navbar-background-color: #94c347; // Cambiado para que coincida con la imagen (verde)
+$navbar-background-color: #94c347; 
 $navbar-color-active: $color-background;
 $navbar-color-hover: $color-background;
 
-//Colores para los bordes de las cards
-$card-color-green: #94c347;
-$card-color-blue: #007bff; // Azul vibrante
-$card-color-orange: #ffc107; // Naranja/Amarillo
-$card-color-purple: #9933cc; // Morado
+$border-width: 0.15rem; 
+$border-style: solid;
+$border-radius-small: 0.3rem; 
+$border-radius: 1rem;
+$boder-radius-big: 2rem;
 
-//Colores barra de estado
-$status-error: #dc3545; // Rojo
-$status-warning: #ffc107; // Amarillo
-$status-accepted: #28a745; // Verde
-$status-normal: #007bff; // Azul
+@mixin estado-base {
+    padding: 0.2rem 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: $border-radius-small;
+    color: $color-background;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
 
-/*Estilos para el contenedor general de mi página*/
-$main-container-width: 90%; // Cambiado a 90% para ajustarse al CSS original y a la imagen
+@function obtener-tamano-icono-bandera($base-size) {
+    @if $base-size < 20px {
+        @return 20px;
+    } @else {
+        @return math.min($base-size, 40px);
+    }
+}
 
-.container {
+.contenedor {
     width: $main-container-width;
     margin: 0 auto;
 }
 
-// Estilos para la barra de estado superior
-.status-bar {
-    text-align: right;
-    margin-bottom: 0.5rem; // Espacio entre la barra de estado y el menú
-    
-    .status {
-        padding: 0.2rem 0.5rem;
-        margin-left: 0.5rem;
-        border-radius: 0.2rem;
-        color: $color-background;
-        font-weight: bold;
-        font-size: 0.8rem;
+$status-colors: (
+    error: #dc3545, 
+    advertencia: #ffc107, 
+    aceptado: #28a745, 
+    normal: #007bff
+);
 
-        &.error { background-color: $status-error; }
-        &.warning { background-color: $status-warning; }
-        &.accepted { background-color: $status-accepted; }
-        &.normal { background-color: $status-normal; }
+.barra-estado {
+    text-align: right;
+    margin-bottom: 0.5rem;
+    
+    .estado {
+        @include estado-base; 
+
+        @each $name, $color in $status-colors {
+            &.#{$name} { 
+                background-color: $color; 
+                
+                @if $name == error {
+                }
+            }
+        }
     }
 }
 
-
-//Estilos para los bordes
-$border-width: 0.15rem; // Más grueso para coincidir con el CSS original
-$border-style: solid;
-
-$border-radius-small: 0.3rem; // Cambiado para el menú
-$border-radius: 1rem;
-$boder-radius-big: 2rem;
-
-
-/*Usando anidamiento crear la hoja de estilos para un menú */
 nav {
     background-color: $navbar-background-color;
-    padding: 0.4rem; // Más padding para coincidir con el CSS original
-    border-radius: $border-radius-small; // Radio pequeño para el menú
+    padding: 0.4rem; 
+    border-radius: $border-radius-small; 
 
     ul {
         li {
             display: inline-block;
             padding-left: 1rem;
             padding-right: 1rem;
-            font-weight: bold; // Añadido para que coincida con el CSS original
-            color: #000; // Color de texto por defecto negro
+            font-weight: bold; 
+            color: #000; 
 
-            &.active {
+            &.activo {
                 color: $navbar-color-active;
-                font-weight: bold; // Ajustado a bold
+                font-weight: bold; 
             }
 
             &:hover {
                 color: $navbar-color-hover;
             }
 
-
             a {
                 text-decoration: none;
-                color: inherit; // Para que el color del texto de la lista se aplique al enlace
+                color: inherit; 
             }
-
         }
     }
 }
 
-/*Estructura de anidamiento para la figura (cards)*/
-$figure-width: 42%; // Cambiado a 42% para tener 2 cards por fila (como en el CSS original y la imagen)
+$figure-width: 42%; 
 
-figure.card {
-    border: $border-width $border-style $color-base; // Borde por defecto gris
+figure.tarjeta {
+    border: $border-width $border-style $color-base;
     border-radius: $border-radius;
     display: inline-block;
     padding: 1rem;
     width: $figure-width;
-    margin: 1%; // Para el espaciado
-    vertical-align: top; // Para alineación superior
-    position: relative; // Necesario para posicionar la bandera
+    margin: 1%;
+    vertical-align: top;
+    position: relative;
 
-    // Colores de borde específicos
-    &.card-green { border-color: $card-color-green; background-color: lighten($card-color-green, 30%); }
-    &.card-blue { border-color: $card-color-blue; background-color: lighten($card-color-blue, 40%); }
-    &.card-orange { border-color: $card-color-orange; background-color: lighten($card-color-orange, 25%); }
-    &.card-purple { border-color: $card-color-purple; background-color: lighten($card-color-purple, 45%); }
+    @each $theme, $config in $card-themes {
+        &.tarjeta-#{$theme} {
+            $card-color: map.get($config, color);
+            $light-amount: map.get($config, lightness);
+            
+            border-color: $card-color;
+            background-color: color.adjust($card-color, $lightness: $light-amount);
+        }
+    }
 
-     img {
+    img {
         border-radius: $boder-radius-big; 
         width: 100%;
-     }
+    }
 
-    .flag-container {
+    $i: 1;
+    @while $i < 4 {
+        $margin-size: $i * 0.1rem;
+        
+        @for $j from 1 through 2 {
+            @if $j == 1 {
+                figcaption.margin-test-#{$i} { 
+                    margin-top: $margin-size; 
+                }
+            } @else {
+                p.margin-test-#{$i} { 
+                    margin-bottom: $margin-size; 
+                }
+            }
+        }
+        $i: $i + 1;
+    }
+
+
+    .contenedor-bandera {
         position: absolute;
-        bottom: 50%; // Posicionamiento inicial
+        bottom: 50%;
         left: 50%;
-        transform: translate(-50%, 0); // Centrado
+        transform: translate(-50%, 0);
 
-        .flag-icon {
-            width: 30px; // Tamaño del icono de la bandera
-            height: 30px;
-            border-radius: 50%; // Forma redonda
-            border: 2px solid $color-base; // Borde para el icono
+        .icono-bandera {
+            $icon-size: obtener-tamano-icono-bandera(30px);
+            
+            width: $icon-size;
+            height: $icon-size;
+            border-radius: 50%;
+            border: 2px solid $color-base;
             position: absolute;
             left: 50%;
-            bottom: -50px; // Ajuste para que quede en el centro inferior del borde de la imagen
+            bottom: -50px;
             transform: translateX(-50%);
             z-index: 10;
         }
     }
 
-     figcaption {
-         font-size: 0.9rem; // Ajustado a 0.9rem
-         margin: 0.6rem; // Ajustado a 0.6rem
-         text-align: center;
-         font-weight: bold; // Añadido negrita
-     }
+    figcaption {
+        font-size: 0.9rem;
+        margin: 0.6rem;
+        text-align: center;
+        font-weight: bold;
+    }
 
-     p {
+    p {
         font-size: 0.8rem;
         margin: 0.6rem 0;
         text-align: left;
         line-height: 1.2;
-     }
-
+    }
 }

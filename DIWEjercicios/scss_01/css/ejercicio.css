@@ -1,36 +1,33 @@
-@charset "UTF-8";
-/*Estilos para el contenedor general de mi página*/
-.container {
+.contenedor {
   width: 90%;
   margin: 0 auto;
 }
 
-.status-bar {
+.barra-estado {
   text-align: right;
   margin-bottom: 0.5rem;
 }
-.status-bar .status {
+.barra-estado .estado {
   padding: 0.2rem 0.5rem;
   margin-left: 0.5rem;
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
   color: #FFFFFF;
   font-weight: bold;
   font-size: 0.8rem;
 }
-.status-bar .status.error {
+.barra-estado .estado.error {
   background-color: #dc3545;
 }
-.status-bar .status.warning {
+.barra-estado .estado.advertencia {
   background-color: #ffc107;
 }
-.status-bar .status.accepted {
+.barra-estado .estado.aceptado {
   background-color: #28a745;
 }
-.status-bar .status.normal {
+.barra-estado .estado.normal {
   background-color: #007bff;
 }
 
-/*Usando anidamiento crear la hoja de estilos para un menú */
 nav {
   background-color: #94c347;
   padding: 0.4rem;
@@ -43,7 +40,7 @@ nav ul li {
   font-weight: bold;
   color: #000;
 }
-nav ul li.active {
+nav ul li.activo {
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -55,8 +52,7 @@ nav ul li a {
   color: inherit;
 }
 
-/*Estructura de anidamiento para la figura (cards)*/
-figure.card {
+figure.tarjeta {
   border: 0.15rem solid #333333;
   border-radius: 1rem;
   display: inline-block;
@@ -66,33 +62,51 @@ figure.card {
   vertical-align: top;
   position: relative;
 }
-figure.card.card-green {
+figure.tarjeta.tarjeta-verde {
   border-color: #94c347;
   background-color: rgb(215.0942622951, 232.6229508197, 186.3770491803);
 }
-figure.card.card-blue {
+figure.tarjeta.tarjeta-azul {
   border-color: #007bff;
   background-color: rgb(204, 228.6, 255);
 }
-figure.card.card-orange {
+figure.tarjeta.tarjeta-naranja {
   border-color: #ffc107;
   background-color: rgb(255, 224.875, 134.5);
 }
-figure.card.card-purple {
+figure.tarjeta.tarjeta-morada {
   border-color: #9933cc;
   background-color: rgb(244.8, 234.6, 249.9);
 }
-figure.card img {
+figure.tarjeta img {
   border-radius: 2rem;
   width: 100%;
 }
-figure.card .flag-container {
+figure.tarjeta figcaption.margin-test-1 {
+  margin-top: 0.1rem;
+}
+figure.tarjeta p.margin-test-1 {
+  margin-bottom: 0.1rem;
+}
+figure.tarjeta figcaption.margin-test-2 {
+  margin-top: 0.2rem;
+}
+figure.tarjeta p.margin-test-2 {
+  margin-bottom: 0.2rem;
+}
+figure.tarjeta figcaption.margin-test-3 {
+  margin-top: 0.3rem;
+}
+figure.tarjeta p.margin-test-3 {
+  margin-bottom: 0.3rem;
+}
+figure.tarjeta .contenedor-bandera {
   position: absolute;
   bottom: 50%;
   left: 50%;
   transform: translate(-50%, 0);
 }
-figure.card .flag-container .flag-icon {
+figure.tarjeta .contenedor-bandera .icono-bandera {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -103,13 +117,13 @@ figure.card .flag-container .flag-icon {
   transform: translateX(-50%);
   z-index: 10;
 }
-figure.card figcaption {
+figure.tarjeta figcaption {
   font-size: 0.9rem;
   margin: 0.6rem;
   text-align: center;
   font-weight: bold;
 }
-figure.card p {
+figure.tarjeta p {
   font-size: 0.8rem;
   margin: 0.6rem 0;
   text-align: left;

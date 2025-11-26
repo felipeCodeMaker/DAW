@@ -1,0 +1,372 @@
+// =============================================
+// GUÍA BÁSICA DE SASS/SCSS
+// =============================================
+
+/*
+  Sass (Syntactically Awesome Style Sheets) es un preprocesador CSS
+  que añade características poderosas como variables, nesting, mixins, etc.
+  
+  Existen dos sintaxis:
+  - SCSS (Sassy CSS): Usa {} y ; (más similar a CSS)
+  - Sass (sintaxis antigua): Usa indentación
+  
+  Esta guía usa SCSS (recomendado)
+*/
+
+// =============================================
+// 1. VARIABLES
+// =============================================
+
+// Las variables permiten almacenar valores para reutilizarlos
+$color-primario: #3498db;
+$color-secundario: #2ecc71;
+$color-texto: #333333;
+$espaciado-base: 1rem;
+$fuente-principal: 'Arial', sans-serif;
+$border-radius: 4px;
+
+// Uso de variables
+.header {
+  background-color: $color-primario;
+  color: $color-texto;
+  padding: $espaciado-base * 2;
+  font-family: $fuente-principal;
+}
+
+// =============================================
+// 2. NESTING (ANIDAMIENTO)
+// =============================================
+
+// En lugar de escribir selectores largos, puedes anidarlos
+.navbar {
+  background: #2c3e50;
+  padding: 1rem;
+  
+  // Selector anidado para elementos dentro de .navbar
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+    // Selector anidado para li dentro de ul dentro de .navbar
+    li {
+      margin-right: 1rem;
+      
+      // Selector anidado para a dentro de li
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: $border-radius;
+        transition: background-color 0.3s;
+        
+        // Pseudoclases también se pueden anidar
+        &:hover {
+          background-color: $color-primario;
+        }
+        
+        // Pseudoclase active
+        &:active {
+          background-color: darken($color-primario, 20%);
+        }
+      }
+    }
+  }
+}
+
+// =============================================
+// 3. MIXINS
+// =============================================
+
+// Los mixins son bloques de código reutilizables
+// Mixin básico
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin con parámetros
+@mixin button-style($bg-color, $text-color: white) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+// Mixin para responsive design
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+}
+
+// Uso de mixins
+.container {
+  @include flex-center;
+  height: 100vh;
+}
+
+.btn-primary {
+  @include button-style($color-primario);
+}
+
+.btn-secondary {
+  @include button-style($color-secundario, #333);
+}
+
+// =============================================
+// 4. EXTEND/INHERITANCE (HERENCIA)
+// =============================================
+
+// Placeholders (no se compilan a CSS)
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: $border-radius;
+  margin: 1rem 0;
+}
+
+// Clases que extienden del placeholder
+.message-success {
+  @extend %message-shared;
+  border-color: $color-secundario;
+  background-color: lighten($color-secundario, 45%);
+  color: darken($color-secundario, 20%);
+}
+
+.message-error {
+  @extend %message-shared;
+  border-color: #e74c3c;
+  background-color: lighten(#e74c3c, 45%);
+  color: darken(#e74c3c, 20%);
+}
+
+// =============================================
+// 5. OPERACIONES
+// =============================================
+
+// Operaciones matemáticas
+$ancho-base: 100%;
+$espaciado: 2rem;
+
+.container-fluid {
+  width: $ancho-base;
+  padding: $espaciado;
+  
+  .col {
+    width: $ancho-base / 3;
+    margin: $espaciado / 2;
+    height: 200px - 50px; // 150px
+  }
+}
+
+// =============================================
+// 6. FUNCIONES
+// =============================================
+
+// Sass incluye muchas funciones útiles
+.card {
+  background-color: $color-primario;
+  padding: 2rem;
+  
+  // Funciones de color
+  &--light {
+    background-color: lighten($color-primario, 20%);
+  }
+  
+  &--dark {
+    background-color: darken($color-primario, 20%);
+  }
+  
+  &--transparent {
+    background-color: transparentize($color-primario, 0.5);
+  }
+}
+
+// =============================================
+// 7. CONTROL DE FLUJO
+// =============================================
+
+// @if, @else, @for, @each, @while
+
+// @if y @else
+@mixin text-color($background) {
+  @if (lightness($background) > 50) {
+    color: #000000;
+  } @else {
+    color: #ffffff;
+  }
+}
+
+.banner {
+  background: $color-primario;
+  @include text-color($color-primario);
+}
+
+// @for loop
+@for $i from 1 through 5 {
+  .mt-#{$i} {
+    margin-top: #{$i}rem;
+  }
+  
+  .mb-#{$i} {
+    margin-bottom: #{$i}rem;
+  }
+}
+
+// @each loop
+$colors: (
+  "primary": $color-primario,
+  "secondary": $color-secundario,
+  "warning": #f39c12,
+  "danger": #e74c3c
+);
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
+  
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+// =============================================
+// 8. IMPORT Y PARTIALS
+// =============================================
+
+/*
+  Los partials son archivos Sass que comienzan con _
+  No se compilan a CSS individualmente
+  
+  Ejemplo de estructura:
+  styles/
+  ├── main.scss
+  ├── _variables.scss
+  ├── _mixins.scss
+  ├── _components.scss
+  └── _layout.scss
+*/
+
+// En main.scss importarías:
+// @import 'variables';
+// @import 'mixins';
+// @import 'components';
+// @import 'layout';
+
+// =============================================
+// 9. EJEMPLO PRÁCTICO COMBINADO
+// =============================================
+
+// Componente de tarjeta usando todo lo aprendido
+.card {
+  @extend %message-shared;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  }
+  
+  &__header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    
+    h3 {
+      margin: 0;
+      color: $color-texto;
+    }
+  }
+  
+  &__body {
+    padding: 1.5rem;
+    
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  &__footer {
+    padding: 1rem 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+    
+    .btn {
+      @include button-style($color-primario);
+      margin-right: 0.5rem;
+      
+      &--outline {
+        @include button-style(transparent, $color-primario);
+        border: 2px solid $color-primario;
+      }
+    }
+  }
+  
+  // Responsive con mixin
+  @include responsive(mobile) {
+    margin: 1rem 0;
+    
+    &__header,
+    &__body,
+    &__footer {
+      padding: 1rem;
+    }
+  }
+}
+
+// =============================================
+// 10. COMENTARIOS
+// =============================================
+
+// Comentario de una línea (no aparece en CSS compilado)
+
+/* 
+  Comentario multilínea 
+  Aparece en CSS compilado
+*/
+
+// =============================================
+// CONSEJOS FINALES
+// =============================================
+
+/*
+  1. Usa variables para colores, fuentes y valores repetitivos
+  2. No anides demasiado profundo (máximo 3-4 niveles)
+  3. Crea mixins para patrones reutilizables
+  4. Usa @extend para agrupar estilos comunes
+  5. Organiza tu código en partials
+  6. Usa funciones de Sass para manipular colores
+  7. Implementa responsive design con mixins
+*/
+
+// Para compilar Sass a CSS puedes usar:
+// - Sass CLI: sass input.scss output.css
+// - Watch mode: sass --watch input.scss:output.css
+// - Con Node.js: node-sass, gulp-sass, webpack sass-loader

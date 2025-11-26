@@ -1,0 +1,295 @@
+@charset "UTF-8";
+/*
+  Sass (Syntactically Awesome Style Sheets) es un preprocesador CSS
+  que añade características poderosas como variables, nesting, mixins, etc.
+
+  Existen dos sintaxis:
+  - SCSS (Sassy CSS): Usa {} y ; (más similar a CSS)
+  - Sass (sintaxis antigua): Usa indentación
+
+  Esta guía usa SCSS (recomendado)
+*/
+.header {
+  background-color: #3498db;
+  color: #333333;
+  padding: 2rem;
+  font-family: "Arial", sans-serif;
+}
+
+.navbar {
+  background: #2c3e50;
+  padding: 1rem;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navbar ul li {
+  margin-right: 1rem;
+}
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.navbar ul li a:hover {
+  background-color: #3498db;
+}
+.navbar ul li a:active {
+  background-color: rgb(25.4560669456, 96.1673640167, 143.5439330544);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #2ecc71;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background-color: rgb(36.616, 162.384, 89.948);
+  transform: translateY(-2px);
+}
+
+.card, .message-error, .message-success {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.message-success {
+  border-color: #2ecc71;
+  background-color: rgb(230.112, 249.388, 238.286);
+  color: rgb(27.232, 120.768, 66.896);
+}
+
+.message-error {
+  border-color: #e74c3c;
+  background-color: white;
+  color: rgb(168.2876712329, 34.5205479452, 20.7123287671);
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 2rem;
+}
+.container-fluid .col {
+  width: 33.3333333333%;
+  margin: 1rem;
+  height: 150px;
+}
+
+.card {
+  background-color: #3498db;
+  padding: 2rem;
+}
+.card--light {
+  background-color: rgb(138.6359832636, 195.9581589958, 234.3640167364);
+}
+.card--dark {
+  background-color: rgb(25.4560669456, 96.1673640167, 143.5439330544);
+}
+.card--transparent {
+  background-color: rgba(52, 152, 219, 0.5);
+}
+
+.banner {
+  background: #3498db;
+  color: #000000;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.mb-5 {
+  margin-bottom: 5rem;
+}
+
+.text-primary {
+  color: #3498db;
+}
+
+.bg-primary {
+  background-color: #3498db;
+}
+
+.text-secondary {
+  color: #2ecc71;
+}
+
+.bg-secondary {
+  background-color: #2ecc71;
+}
+
+.text-warning {
+  color: #f39c12;
+}
+
+.bg-warning {
+  background-color: #f39c12;
+}
+
+.text-danger {
+  color: #e74c3c;
+}
+
+.bg-danger {
+  background-color: #e74c3c;
+}
+
+/*
+  Los partials son archivos Sass que comienzan con _
+  No se compilan a CSS individualmente
+
+  Ejemplo de estructura:
+  styles/
+  ├── main.scss
+  ├── _variables.scss
+  ├── _mixins.scss
+  ├── _components.scss
+  └── _layout.scss
+*/
+.card {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+.card__header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+.card__header h3 {
+  margin: 0;
+  color: #333333;
+}
+.card__body {
+  padding: 1.5rem;
+}
+.card__body p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.card__footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid #eee;
+}
+.card__footer .btn {
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+}
+.card__footer .btn:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+  transform: translateY(-2px);
+}
+.card__footer .btn--outline {
+  background-color: transparent;
+  color: #3498db;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #3498db;
+}
+.card__footer .btn--outline:hover {
+  background-color: rgba(0, 0, 0, 0);
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .card {
+    margin: 1rem 0;
+  }
+  .card__header, .card__body, .card__footer {
+    padding: 1rem;
+  }
+}
+
+/* 
+  Comentario multilínea 
+  Aparece en CSS compilado
+*/
+/*
+  1. Usa variables para colores, fuentes y valores repetitivos
+  2. No anides demasiado profundo (máximo 3-4 niveles)
+  3. Crea mixins para patrones reutilizables
+  4. Usa @extend para agrupar estilos comunes
+  5. Organiza tu código en partials
+  6. Usa funciones de Sass para manipular colores
+  7. Implementa responsive design con mixins
+*//*# sourceMappingURL=teoria.css.map */

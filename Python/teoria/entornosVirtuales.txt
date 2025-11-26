@@ -1,0 +1,151 @@
+# 1. Crear entorno
+python -m venv mi_proyecto
+
+# 2. Activar entorno
+# Windows:
+mi_proyecto\Scripts\activate
+# Linux/Mac:
+source mi_proyecto/bin/activate
+
+# Windows PowerShell:
+venv\Scripts\Activate.ps1
+
+
+Verificar que funciona:
+
+# Deberías ver (venv) en el prompt
+pip list  # Mostrará solo paquetes básicos
+
+
+Configurar VS Code para usar el entorno:
+Abrir Command Palette (Ctrl+Shift+P)
+
+Escribir: Python: Select Interpreter
+
+Seleccionar el interprete dentro de ./venv/ o ./venv/Scripts/python.exe
+
+
+
+
+
+
+
+
+Comandos útiles dentro del entorno:
+bash
+# Instalar paquetes
+pip install requests pandas numpy
+
+# Listar paquetes instalados
+pip list
+
+# Guardar dependencias
+pip freeze > requirements.txt
+
+# Instalar desde requirements.txt
+pip install -r requirements.txt
+
+# Desactivar entorno
+deactivate
+
+
+
+
+
+
+
+
+
+Si no tienes permisos en PowerShell:
+powershell
+# Ejecutar como administrador y permitir scripts:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Si el comando python no funciona:
+bash
+# Probar con python3 en Linux/Mac:
+python3 -m venv venv
+
+# O especificar la ruta completa:
+C:\Python311\python -m venv venv
+
+
+
+
+
+
+
+
+
+# 3. Instalar paquetes
+pip install requests pandas numpy
+
+# 4. Listar paquetes instalados
+pip list
+
+# 5. Guardar dependencias
+pip freeze > requirements.txt
+
+# 6. Desactivar entorno
+deactivate
+
+# 7. Eliminar entorno (cuando ya no lo necesites)
+rm -rf mi_proyecto  # Linux/Mac
+
+
+
+
+
+
+
+# Ver variable de entorno VIRTUAL_ENV
+echo $VIRTUAL_ENV  # Linux/Mac/PowerShell
+echo %VIRTUAL_ENV%  # Windows CMD
+
+# O ver el prompt de la terminal
+# Si ves (nombre_entorno) antes del cursor, está activo
+
+
+
+
+Si no puedes desactivarlo, puedes eliminarlo directamente:
+
+Windows:
+
+cmd
+# Cerrar TODAS las terminales abiertas
+# Abrir nueva terminal y eliminar:
+rmdir /s nombre_del_entorno
+
+
+
+Forzar cierre de procesos (opción avanzada)
+Si hay procesos usando el entorno:
+
+Windows:
+
+cmd
+# Cerrar todas las instancias de Python
+taskkill /f /im python.exe
+
+
+
+
+
+__________________________________________________________
+|   Mi recomendación:                                     |
+|   Cierra completamente la terminal/powershell           |
+|                                                         |
+|   Abre una nueva terminal                               |
+|                                                         |
+|   Elimina la carpeta del entorno virtual                |
+|                                                         |
+|                                                         |
+|   # Verificar que no estás en un entorno virtual        |
+|   # (el prompt no debe mostrar el nombre del entorno)   |
+|                                                         |
+|   # Luego eliminar:                                     |
+|   rm -rf nombre_del_entorno  # Linux/Mac                |
+|   rmdir /s nombre_del_entorno  # Windows CMD  
+|   # Windows PowerShell:
+|    Remove-Item -Recurse -Force nombre_del_entorno
+__________________________________________________________

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/*Estilos para el contenedor general de mi página*/
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.status-bar {
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+.status-bar .status {
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 0.2rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.status-bar .status.error {
+  background-color: #dc3545;
+}
+.status-bar .status.warning {
+  background-color: #ffc107;
+}
+.status-bar .status.accepted {
+  background-color: #28a745;
+}
+.status-bar .status.normal {
+  background-color: #007bff;
+}
+
+/*Usando anidamiento crear la hoja de estilos para un menú */
+nav {
+  background-color: #94c347;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+}
+nav ul li {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: bold;
+  color: #000;
+}
+nav ul li.active {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+nav ul li:hover {
+  color: #FFFFFF;
+}
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Estructura de anidamiento para la figura (cards)*/
+figure.card {
+  border: 0.15rem solid #333333;
+  border-radius: 1rem;
+  display: inline-block;
+  padding: 1rem;
+  width: 42%;
+  margin: 1%;
+  vertical-align: top;
+  position: relative;
+}
+figure.card.card-green {
+  border-color: #94c347;
+  background-color: rgb(215.0942622951, 232.6229508197, 186.3770491803);
+}
+figure.card.card-blue {
+  border-color: #007bff;
+  background-color: rgb(204, 228.6, 255);
+}
+figure.card.card-orange {
+  border-color: #ffc107;
+  background-color: rgb(255, 224.875, 134.5);
+}
+figure.card.card-purple {
+  border-color: #9933cc;
+  background-color: rgb(244.8, 234.6, 249.9);
+}
+figure.card img {
+  border-radius: 2rem;
+  width: 100%;
+}
+figure.card .flag-container {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+figure.card .flag-container .flag-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #333333;
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+figure.card figcaption {
+  font-size: 0.9rem;
+  margin: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+}
+figure.card p {
+  font-size: 0.8rem;
+  margin: 0.6rem 0;
+  text-align: left;
+  line-height: 1.2;
+}
+
+/*# sourceMappingURL=ejercicio.css.map */

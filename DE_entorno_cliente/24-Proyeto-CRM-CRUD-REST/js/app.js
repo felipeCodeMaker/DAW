@@ -7,7 +7,7 @@ import { consultaClientes, eliminarCliente } from "./API.js"
     async function obtenerClientes(){
         const clientes = await consultaClientes() //Le colocamos await para que haga el console.log una vez haya hecho el fetch, caso contrario va a aparecer un mensaje de pending 
         console.log(clientes);
-         clientes.forEach(element => {
+        clientes.forEach(element => {
             
             const {nombre, email, empresa, telefono, id} = element
             const row = document.createElement('tr');
@@ -30,7 +30,15 @@ import { consultaClientes, eliminarCliente } from "./API.js"
             `;
             listado.appendChild(row)
         });
-        };
     }
-    
-)()
+    function confirmarEliminar(e){
+        if(e.target.classList.contains('eliminar')){
+            const clienteID = parseInt(e.target.dataset.cliente);
+            const confirmar = confirm('Estas seguro que deseas eliminar?')
+            if(confirmar){
+                eliminarCliente(clienteID)
+            }
+            
+        }
+    }
+})()

@@ -12,7 +12,7 @@ import { mostrarAlerta, validar } from "./funciones.js";
 
 
 document.addEventListener('DOMContentLoaded',async()=>{
-    const parametrosURL = new URLSearchParams(window.location.search)
+    const parametrosURL = new URLSearchParams(window.location.search)   //IMPORTANTE --> localizar parametros
     const idCliente = parseInt(parametrosURL.get('id'))
     
      const cliente = await obtenerClienteID( idCliente)

@@ -1,30 +1,30 @@
-.contenedor {
+.container {
   width: 90%;
   margin: 0 auto;
 }
 
-.barra-estado {
+.status-bar {
   text-align: right;
   margin-bottom: 0.5rem;
 }
-.barra-estado .estado {
+.status-bar .status {
   padding: 0.2rem 0.5rem;
   margin-left: 0.5rem;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
   color: #FFFFFF;
   font-weight: bold;
   font-size: 0.8rem;
 }
-.barra-estado .estado.error {
+.status-bar .status.error {
   background-color: #dc3545;
 }
-.barra-estado .estado.advertencia {
+.status-bar .status.warning {
   background-color: #ffc107;
 }
-.barra-estado .estado.aceptado {
+.status-bar .status.accepted {
   background-color: #28a745;
 }
-.barra-estado .estado.normal {
+.status-bar .status.normal {
   background-color: #007bff;
 }
 
@@ -40,7 +40,7 @@ nav ul li {
   font-weight: bold;
   color: #000;
 }
-nav ul li.activo {
+nav ul li.active {
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -52,7 +52,7 @@ nav ul li a {
   color: inherit;
 }
 
-figure.tarjeta {
+figure.card {
   border: 0.15rem solid #333333;
   border-radius: 1rem;
   display: inline-block;
@@ -60,70 +60,34 @@ figure.tarjeta {
   width: 42%;
   margin: 1%;
   vertical-align: top;
-  position: relative;
 }
-figure.tarjeta.tarjeta-verde {
+figure.card.card-green {
   border-color: #94c347;
   background-color: rgb(215.0942622951, 232.6229508197, 186.3770491803);
 }
-figure.tarjeta.tarjeta-azul {
+figure.card.card-blue {
   border-color: #007bff;
   background-color: rgb(204, 228.6, 255);
 }
-figure.tarjeta.tarjeta-naranja {
+figure.card.card-orange {
   border-color: #ffc107;
   background-color: rgb(255, 224.875, 134.5);
 }
-figure.tarjeta.tarjeta-morada {
+figure.card.card-purple {
   border-color: #9933cc;
   background-color: rgb(244.8, 234.6, 249.9);
 }
-figure.tarjeta img {
+figure.card img {
   border-radius: 2rem;
   width: 100%;
 }
-figure.tarjeta figcaption.margin-test-1 {
-  margin-top: 0.1rem;
-}
-figure.tarjeta p.margin-test-1 {
-  margin-bottom: 0.1rem;
-}
-figure.tarjeta figcaption.margin-test-2 {
-  margin-top: 0.2rem;
-}
-figure.tarjeta p.margin-test-2 {
-  margin-bottom: 0.2rem;
-}
-figure.tarjeta figcaption.margin-test-3 {
-  margin-top: 0.3rem;
-}
-figure.tarjeta p.margin-test-3 {
-  margin-bottom: 0.3rem;
-}
-figure.tarjeta .contenedor-bandera {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-figure.tarjeta .contenedor-bandera .icono-bandera {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid #333333;
-  position: absolute;
-  left: 50%;
-  bottom: -50px;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-figure.tarjeta figcaption {
+figure.card figcaption {
   font-size: 0.9rem;
   margin: 0.6rem;
   text-align: center;
   font-weight: bold;
 }
-figure.tarjeta p {
+figure.card p {
   font-size: 0.8rem;
   margin: 0.6rem 0;
   text-align: left;

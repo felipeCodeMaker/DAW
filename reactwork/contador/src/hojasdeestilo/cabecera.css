@@ -1,0 +1,21 @@
+.cabecera {
+	background-color: white;
+	color: black;
+    align-items: center;
+    font-size: 80px ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center
+}	
+
+
+.cabecera:hover{
+    background-color: black;
+    font-size: 160px ;
+    color: white;
+	
+}
+
+
+
+

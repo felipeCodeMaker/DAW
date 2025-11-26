@@ -1,0 +1,16 @@
+# Abre la terminal en VSCode (Ctrl + ` o Terminal -> New Terminal)
+
+# Navega a donde quieres crear tu proyecto
+cd ruta/donde/crear/proyecto
+
+# Crear nueva aplicación React
+npx create-react-app mi-proyecto-react
+
+#Comprobar
+nmp start
+
+# Entrar a la carpeta del proyecto
+cd mi-proyecto-react
+
+# Abrir en VSCode (si no estás ya ahí)
+code .

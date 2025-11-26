@@ -1,0 +1,30 @@
+
+import './App.css';
+import logies from './imagenes/logo.png'
+import Boton from './Componentes/Boton'
+import Contador from './Componentes/Contador'
+import { useState } from 'react';
+
+function App() {
+  return (
+    <div className="App">
+      <div className="iesazarquiel-logo-contenedor">
+        <img className="iesazarquiel-logo" src={logoies} alt="logo" />
+        
+      <div className = 'contador-principal'>
+
+        <Contador numClicks={{numClicks}}/>
+
+        <Boton texto='Click' esBotonClick = {true} manejarClick={manejarClick}/>
+
+        <Boton texto = 'Reiniciar' esBotonClick={false} manejarClick={reiniciarContador}/>
+      
+      
+      </div>
+        
+      </div>
+    </div>
+  );
+}
+
+export default App;

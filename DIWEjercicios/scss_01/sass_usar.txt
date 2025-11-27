@@ -1,0 +1,109 @@
+CONOCIMIENTO BÁSICO DE SCSS/SASS
+Sass (Syntactically Awesome Style Sheets) es un preprocesador de CSS. Permite usar características de programación para generar código CSS estándar de forma más eficiente.
+
+SCSS (Sassy CSS): Es la sintaxis moderna y más usada. Es compatible con CSS (todo CSS válido es SCSS válido).
+
+Compilación: El navegador solo entiende CSS. El código SCSS debe ser compilado a un archivo .css para ser usado en la web.
+
+CONCEPTOS FUNDAMENTALES
+1. VARIABLES ($)
+Permiten almacenar valores para ser reutilizados. Ayudan a centralizar la gestión de colores, tamaños, etc.
+
+Sintaxis: $nombre-de-variable: valor;
+
+Ejemplo:
+
+SCSS
+
+$color-primario: #3498db;
+$ancho-contenedor: 1200px;
+
+.header {
+    background-color: $color-primario;
+    max-width: $ancho-contenedor;
+}
+2. ANIDAMIENTO (NESTING)
+Permite colocar un selector CSS dentro de otro, imitando la estructura del HTML y evitando la repetición del selector padre.
+
+Símbolo &: Se refiere al selector padre y se usa para pseudo-clases (:hover) o clases compuestas.
+
+Ejemplo:
+
+SCSS
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            a {
+                color: blue;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+Compila a: nav ul { ... }, nav ul li { ... }, nav ul li a { ... }, nav ul li a:hover { ... }
+
+3. PARTIALS E IMPORTS
+Permiten modularizar el código SCSS dividiéndolo en archivos pequeños (partials) que luego se agrupan en un archivo principal.
+
+Partials: Archivos que empiezan con un guion bajo (ej: _variables.scss).
+
+Importar: Se usa la directiva @import. No se incluye el guion bajo ni la extensión.
+
+Ejemplo:
+
+SCSS
+
+// Archivo main.scss
+@import 'variables';   // Importa el archivo _variables.scss
+@import 'tipografia'; // Importa el archivo _tipografia.scss
+
+body {
+    font-family: $fuente-principal; // Usa una variable de _variables.scss
+}
+4. MIXINS (@mixin y @include)
+Son bloques de código reutilizables (funciones sin retorno) para aplicar un grupo de propiedades en varios lugares, como manejar prefijos de navegadores o estilos complejos.
+
+Definición: @mixin nombre-del-mixin { ... }
+
+Uso: @include nombre-del-mixin;
+
+Argumentos: Pueden aceptar valores (parámetros).
+
+Ejemplo:
+
+SCSS
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta {
+    @include flex-center;
+    height: 100px;
+}
+5. EXTEND/HERENCIA (@extend)
+Permite que un selector herede todos los estilos de otro selector, agrupando selectores idénticos en el CSS compilado para evitar duplicación.
+
+Ejemplo:
+
+SCSS
+
+.mensaje-base {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.mensaje-error {
+    @extend .mensaje-base;
+    color: red;
+}
+Compila a: .mensaje-base, .mensaje-error { border: 1px solid black; padding: 10px; }

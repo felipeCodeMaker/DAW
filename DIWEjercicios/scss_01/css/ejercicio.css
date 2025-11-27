@@ -1,13 +1,13 @@
-.container {
+.contenedor {
   width: 90%;
   margin: 0 auto;
 }
 
-.status-bar {
+.barra-estatus {
   text-align: right;
   margin-bottom: 0.5rem;
 }
-.status-bar .status {
+.barra-estatus .barra {
   padding: 0.2rem 0.5rem;
   margin-left: 0.5rem;
   border-radius: 0.2rem;
@@ -15,16 +15,16 @@
   font-weight: bold;
   font-size: 0.8rem;
 }
-.status-bar .status.error {
+.barra-estatus .barra.error {
   background-color: #dc3545;
 }
-.status-bar .status.warning {
+.barra-estatus .barra.warning {
   background-color: #ffc107;
 }
-.status-bar .status.accepted {
+.barra-estatus .barra.accepted {
   background-color: #28a745;
 }
-.status-bar .status.normal {
+.barra-estatus .barra.normal {
   background-color: #007bff;
 }
 
@@ -52,7 +52,7 @@ nav ul li a {
   color: inherit;
 }
 
-figure.card {
+figure.carta {
   border: 0.15rem solid #333333;
   border-radius: 1rem;
   display: inline-block;
@@ -61,33 +61,33 @@ figure.card {
   margin: 1%;
   vertical-align: top;
 }
-figure.card.card-green {
-  border-color: #94c347;
-  background-color: rgb(215.0942622951, 232.6229508197, 186.3770491803);
+figure.carta.carta-verde {
+  border-color: #28a745;
+  background-color: #28a745;
 }
-figure.card.card-blue {
+figure.carta.carta-azul {
   border-color: #007bff;
-  background-color: rgb(204, 228.6, 255);
+  background-color: #007bff;
 }
-figure.card.card-orange {
+figure.carta.carta-naranja {
   border-color: #ffc107;
-  background-color: rgb(255, 224.875, 134.5);
+  background-color: #ffc107;
 }
-figure.card.card-purple {
+figure.carta.carta-morado {
   border-color: #9933cc;
-  background-color: rgb(244.8, 234.6, 249.9);
+  background-color: #9933cc;
 }
-figure.card img {
+figure.carta img {
   border-radius: 2rem;
   width: 100%;
 }
-figure.card figcaption {
+figure.carta figcaption {
   font-size: 0.9rem;
   margin: 0.6rem;
   text-align: center;
   font-weight: bold;
 }
-figure.card p {
+figure.carta p {
   font-size: 0.8rem;
   margin: 0.6rem 0;
   text-align: left;

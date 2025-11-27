@@ -9,20 +9,20 @@ $navbar-background-color: #94c347;
 $navbar-color-active: $color-background;
 $navbar-color-hover: $color-background;
 
-// Colores para cards (bordes)
-$card-color-green: #94c347;
-$card-color-blue: #007bff;
-$card-color-orange: #ffc107;
-$card-color-purple: #9933cc;
+// Colores para cartas
+$carta-color-verde: #28a745;
+$carta-color-azul: #007bff;
+$carta-color-naranja: #ffc107;
+$carta-color-morado: #9933cc;
 
 // Colores barra de estado
-$status-error: #dc3545;
-$status-warning: #ffc107;
-$status-accepted: #28a745;
-$status-normal: #007bff;
+$cerror: #dc3545;
+$cwarning: #ffc107;
+$ccorrecto: #28a745;
+$cnormal: #007bff;
 
 // Estructura
-$main-container-width: 90%;
+$main-contenedor-width: 90%;
 $border-width: 0.15rem;
 $border-style: solid;
 $border-radius-small: 0.3rem;
@@ -30,17 +30,17 @@ $border-radius: 1rem;
 $boder-radius-big: 2rem;
 $figure-width: 42%;
 
-.container {
-    width: $main-container-width;
+.contenedor {
+    width: $main-contenedor-width;
     margin: 0 auto;
 }
 
 // Estilos de la barra de estado
-.status-bar {
+.barra-estatus {
     text-align: right;
     margin-bottom: 0.5rem;
     
-    .status {
+    .barra {
         padding: 0.2rem 0.5rem;
         margin-left: 0.5rem;
         border-radius: 0.2rem;
@@ -48,10 +48,10 @@ $figure-width: 42%;
         font-weight: bold;
         font-size: 0.8rem;
 
-        &.error { background-color: $status-error; }
-        &.warning { background-color: $status-warning; }
-        &.accepted { background-color: $status-accepted; }
-        &.normal { background-color: $status-normal; }
+        &.error { background-color: $cerror; }
+        &.warning { background-color: $cwarning; }
+        &.accepted { background-color: $ccorrecto; }
+        &.normal { background-color: $cnormal; }
     }
 }
 
@@ -87,7 +87,7 @@ nav {
 }
 
 // Estilos de las tarjetas (cards)
-figure.card {
+figure.carta {
     border: $border-width $border-style $color-base;
     border-radius: $border-radius;
     display: inline-block;
@@ -97,10 +97,10 @@ figure.card {
     vertical-align: top;
 
     // Colores condicionales: usando color.adjust para claridad y modernidad
-    &.card-green { border-color: $card-color-green; background-color: color.adjust($card-color-green, $lightness: 30%); }
-    &.card-blue { border-color: $card-color-blue; background-color: color.adjust($card-color-blue, $lightness: 40%); }
-    &.card-orange { border-color: $card-color-orange; background-color: color.adjust($card-color-orange, $lightness: 25%); }
-    &.card-purple { border-color: $card-color-purple; background-color: color.adjust($card-color-purple, $lightness: 45%); }
+    &.carta-verde { border-color: $carta-color-verde; background-color: color.adjust($carta-color-verde, $lightness: 0%); }
+    &.carta-azul { border-color: $carta-color-azul; background-color: color.adjust($carta-color-azul, $lightness: 0%); }
+    &.carta-naranja { border-color: $carta-color-naranja; background-color: color.adjust($carta-color-naranja, $lightness: 0%); }
+    &.carta-morado { border-color: $carta-color-morado; background-color: color.adjust($carta-color-morado, $lightness: 0%); }
 
      img {
         border-radius: $boder-radius-big;

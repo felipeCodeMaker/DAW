@@ -1,0 +1,166 @@
+@use "sass:color"; // Importar el módulo color para color.adjust
+@use "sass:math";  // Importar el módulo math para math.div
+
+// =================================================================
+// 1. VARIABLES (Colores y Tipografía)
+// =================================================================
+$color-primario: #94c347;
+$color-secundario: #333333;
+$color-fondo: #f0f0f0;
+$color-texto-claro: #FFFFFF;
+$color-texto-oscuro: #1a1a1a;
+$color-resaltado: #dc3545;
+
+$font-principal: 'Arial', sans-serif;
+$font-secundaria: 'Georgia', serif;
+
+$espaciado-base: 1rem;
+$padding-seccion: 4rem 0;
+$ancho-maximo: 1200px;
+
+
+// =================================================================
+// 2. BASE (Reset y Body)
+// =================================================================
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $color-fondo;
+    font-family: $font-principal;
+    color: $color-texto-oscuro;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: $color-primario;
+    &:hover {
+        // 🟢 CORRECCIÓN: Reemplazar darken() con color.adjust
+        color: color.adjust($color-primario, $lightness: -15%);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+// Contenedor central (para centrar el contenido)
+section, header, footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 math.div($espaciado-base, 2); // 🟢 CORRECCIÓN: Usar math.div
+    padding: 0 $espaciado-base * 2; // Mantener el padding lateral de 2rem
+
+    > * {
+        max-width: $ancho-maximo;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// =================================================================
+// 3. BOTONES
+// =================================================================
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    
+    // 🟢 CORRECCIÓN: Reemplazar división con math.div
+    margin: math.div($espaciado-base, 2); 
+    
+    border: 2px solid transparent;
+
+    &.primary {
+        background-color: $color-primario;
+        color: $color-texto-claro;
+        border-color: $color-primario;
+        &:hover {
+            // 🟢 CORRECCIÓN: Reemplazar darken() con color.adjust
+            background-color: color.adjust($color-primario, $lightness: -10%);
+        }
+    }
+
+    &.secondary {
+        background-color: transparent;
+        color: $color-primario;
+        border-color: $color-primario;
+        &:hover {
+            background-color: rgba($color-primario, 0.1);
+        }
+    }
+}
+
+// =================================================================
+// 4. HEADER / HERO (Imagen de Fondo)
+// =================================================================
+
+// ... (Estilos del hero omitidos por brevedad, no contienen advertencias) ...
+
+.top-bar {
+    background-color: rgba($color-secundario, 0.8);
+    // 🟢 CORRECCIÓN: Reemplazar división con math.div
+    padding: math.div($espaciado-base, 2) 0; 
+    font-size: 0.85rem;
+    
+    // ... (restos de estilos del top-bar) ...
+}
+
+// ... (Resto de estilos intermedios omitidos por brevedad) ...
+
+
+// --- 5.5 Contact Form & Location ---
+.contact-form {
+    padding: $padding-seccion;
+    h3, p { text-align: center; }
+    p { margin-bottom: $espaciado-base * 2; }
+
+    form {
+        // ... (restos de estilos de formulario) ...
+
+        label {
+            font-weight: bold;
+            margin-top: $espaciado-base;
+            // 🟢 CORRECCIÓN: Reemplazar división con math.div
+            margin-bottom: math.div($espaciado-base, 4); 
+            color: $color-primario;
+        }
+        // ... (resto de input y textarea) ...
+    }
+}
+// ... (Location section omitida) ...
+
+// =================================================================
+// 6. FOOTER
+// =================================================================
+footer {
+    // ... (Estilos del footer) ...
+    
+    .footer-info, .footer-nav, .footer-logo, .newsletter {
+        flex-basis: 22%;
+        margin-bottom: $espaciado-base * 2;
+    }
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        // 🟢 CORRECCIÓN: Reemplazar división con math.div
+        gap: math.div($espaciado-base, 2); 
+    }
+
+    .footer-nav ul {
+        display: flex;
+        flex-direction: column;
+        // 🟢 CORRECCIÓN: Reemplazar división con math.div
+        gap: math.div($espaciado-base, 2); 
+    }
+    
+    // ... (resto de estilos del footer) ...
+}
